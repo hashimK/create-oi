@@ -21,6 +21,7 @@ var create = (function() {
         SONG:   0x8C,
         PLAY:   0x8D,
         STREAM: 0x94,
+        DOCK: 0x8F,
         SENSORS: 0x8E
     };
 
@@ -307,6 +308,11 @@ var create = (function() {
     module.getMode = function() {
         return mode;
     };
+    
+    module.dock = function() {
+        sendCommand(cmds.DOCK);
+    };
+
 
     listeners = { 'bump': [], 'bumpend': [] };
 
